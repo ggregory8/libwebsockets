@@ -366,6 +366,20 @@ lws_sql_purify(char *escaped, const char *string, int len)
 	return escaped;
 }
 
+int
+lws_sql_purify_len(const char *p)
+{
+	int olen = 0;
+
+	while (*p) {
+		if (*p++ == '\'')
+			olen++;
+		olen++;
+	}
+
+	return olen;
+}
+
 const char *
 lws_json_purify(char *escaped, const char *string, int len)
 {

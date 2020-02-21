@@ -44,6 +44,17 @@ LWS_VISIBLE LWS_EXTERN const char *
 lws_sql_purify(char *escaped, const char *string, int len);
 
 /**
+ * lws_sql_purify_len() - return length of purified version of input string
+ *
+ * \param string: input buffer ('/0' terminated)
+ *
+ * Calculates any character escaping without writing it anywhere and returns the
+ * calculated length of the purified string.
+ */
+int
+lws_sql_purify_len(const char *p);
+
+/**
  * lws_json_purify() - like strncpy but with escaping for json chars
  *
  * \param escaped: output buffer

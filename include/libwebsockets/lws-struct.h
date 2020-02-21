@@ -242,6 +242,10 @@ lws_struct_json_serialize(lws_struct_serialize_t *js, uint8_t *buf,
 #if defined(LWS_WITH_STRUCT_SQLITE3)
 
 LWS_VISIBLE LWS_EXTERN int
+lws_struct_sq3_serialize(sqlite3 *pdb, const lws_struct_map_t *schema,
+			 lws_dll2_owner_t *owner);
+
+LWS_VISIBLE LWS_EXTERN int
 lws_struct_sq3_deserialize(sqlite3 *pdb, const lws_struct_map_t *schema,
 			   lws_dll2_owner_t *o, struct lwsac **ac,
 			   uint64_t start, int limit);
